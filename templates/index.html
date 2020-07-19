@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NLP for Odia |Dipankar </title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    <table  width="100%" style="background:#1b8ed1;">
+        <tr>
+            <td style="width:17%;">
+                <img src="{% static 'logo.png' %}">
+            </td>
+            <td >
+                <h1 style="color:white;text-align:center;">Major Project on</h1>
+                <h1 style="color:white;text-align:center;">Indic Language Model & Classifier for Odia</h1>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <h1 style="text-align:center">Odia Text Prediction</h1>
+
+    <form method="post" action="/">
+        {% csrf_token %}
+        <div style="text-align:center">
+            <input type="text" name="odia_text" placeholder="Enter the NEWS String" required>
+        </div>
+        <br>
+        <div style="text-align:center">
+             <input class="btn btn-success" type="submit" value = "Predict" >
+<!--             <input class="btn btn-danger"type="submit" onclick="reset()" value="Reset"></input>-->
+        </div>
+
+    </form>
+    <br>
+    <h2 id="NewString" style="text-align:center;color:blue">{{ result1 }}</h2>
+    <h1 id="NewString" style="text-align:center;color:red">{{ result2 }}</h1>
+    <script>
+        function reset(){
+        document.getElementById('NewString').remove()
+        }
+    </script>
+</body>
+</html>
